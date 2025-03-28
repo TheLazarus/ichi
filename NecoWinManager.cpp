@@ -1,11 +1,11 @@
-#include "WinManager.h"
+#include "headers/NecoWinManager.h"
 
-WinManager::WinManager(HINSTANCE hInstance)
+NecoWinManager::NecoWinManager(HINSTANCE hInstance)
 {
 	this->hInstance = hInstance;
 }
 
-void WinManager::SL_RegisterClass(PCWSTR pClassName, WinProc winProc)
+void NecoWinManager::NecoRegisterClass(PCWSTR pClassName, WinProc winProc)
 {
 
 	try
@@ -36,7 +36,7 @@ void WinManager::SL_RegisterClass(PCWSTR pClassName, WinProc winProc)
 	}
 }
 
-HWND WinManager::SL_CreateWindow(PCWSTR pWinName, int xPos, int yPos, int nWidth, int nHeight) const
+HWND NecoWinManager::NecoCreateWindow(PCWSTR pWinName, int xPos, int yPos, int nWidth, int nHeight) const
 {
 
 	HWND hWnd = CreateWindowW(pClassName, pWinName, WS_SYSMENU, xPos, yPos, nWidth, nHeight, nullptr, nullptr, hInstance, nullptr);
@@ -47,4 +47,3 @@ HWND WinManager::SL_CreateWindow(PCWSTR pWinName, int xPos, int yPos, int nWidth
 	}
 	return hWnd;
 }
-

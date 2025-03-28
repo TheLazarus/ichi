@@ -1,2 +1,2 @@
-# slaga
-Killer on the ROAD - Kills unresponsive processes immediately.
+# Neco
+Killer on the ROAD

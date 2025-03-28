@@ -1,4 +1,4 @@
-#include "slaga.h"
+#include "headers/Neco.h"
 
 LRESULT WINAPI WinProcedure(HWND hWnd, UINT uMsg, WPARAM wP, LPARAM lP)
 {
@@ -19,13 +19,13 @@ LRESULT WINAPI WinProcedure(HWND hWnd, UINT uMsg, WPARAM wP, LPARAM lP)
 
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR lpCmdLine, int nCmdShow)
 {
-	WinManager winManager(hInstance);
+	NecoWinManager winManager(hInstance);
 
 	PCWSTR WIN_CLASS = L"SL_MAIN", WIN_TITLE = L"SLAGA";
 	int xPos = 0.5, yPos = 0.5, nWidth = 400, nHeight = 400;
 
-	winManager.SL_RegisterClass(WIN_CLASS, WinProcedure);
-	HWND hWnd = winManager.SL_CreateWindow(WIN_TITLE, xPos, yPos, nWidth, nHeight);
+	winManager.NecoRegisterClass(WIN_CLASS, WinProcedure);
+	HWND hWnd = winManager.NecoCreateWindow(WIN_TITLE, xPos, yPos, nWidth, nHeight);
 	ShowWindow(hWnd, SW_SHOW);
 
 	MSG msg;
