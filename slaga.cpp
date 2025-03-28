@@ -7,9 +7,14 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR lpCmdLin
 	int xPos = 0.5, yPos = 0.5, nWidth = 400, nHeight = 400;
 
 	winManager.SL_RegisterClass(WIN_CLASS);
-	winManager.SL_CreateWindow(WIN_CLASS, xPos, yPos, nWidth, nHeight);
+	HWND hWnd = winManager.SL_CreateWindow(WIN_TITLE, xPos, yPos, nWidth, nHeight);
 
 
+	LPMSG msg;
+	while(GetMessage(msg, hWnd, 0, 0) > 0) {
+
+		
+	}
 	return 0;
 
 }

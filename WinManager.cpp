@@ -49,5 +49,7 @@ HWND WinManager::SL_CreateWindow(PCWSTR pWinName, int xPos, int yPos, int nWidth
 	{
 		MessageBoxW(nullptr, L"Window Creation Failed!", L"Error", MB_ICONEXCLAMATION | MB_OK);
 	}
+
+	ShowWindow(hWnd, SW_SHOW);
 	return hWnd;
 }
