@@ -1,6 +1,9 @@
 #ifndef ICHI
 #define ICHI
 
+
+
+
 #ifndef UNICODE
 #define UNICODE
 #endif
