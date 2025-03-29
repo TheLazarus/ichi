@@ -2,6 +2,7 @@
 #define ICHI_WIN_MANAGER
 
 #include "IchiWin.h"
+#include <stdlib.h>
 
 typedef LRESULT(WINAPI *WinProc)(HWND hWnd, UINT uMsg, WPARAM wP, LPARAM lP);
 
