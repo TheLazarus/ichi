@@ -1,5 +1,5 @@
-#ifndef KILLER_NECO
-#define KILLER_NECO
+#ifndef ICHI
+#define ICHI
 
 #ifndef UNICODE
 #define UNICODE
@@ -8,6 +8,7 @@
 #define WIN32_LEAN_AND_MEAN
 
 #include <windows.h>
-#include "NecoWinManager.h"
+#include "IchiWinManager.h"
+#include "IchiProcManager.h"
 
 #endif

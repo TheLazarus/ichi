@@ -1,4 +1,4 @@
-#include "headers/Neco.h"
+#include "headers/Ichi.h"
 
 LRESULT WINAPI WinProcedure(HWND hWnd, UINT uMsg, WPARAM wP, LPARAM lP)
 {
@@ -19,13 +19,13 @@ LRESULT WINAPI WinProcedure(HWND hWnd, UINT uMsg, WPARAM wP, LPARAM lP)
 
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR lpCmdLine, int nCmdShow)
 {
-	NecoWinManager winManager(hInstance);
+	IchiWinManager winManager(hInstance);
 
 	PCWSTR WIN_CLASS = L"SL_MAIN", WIN_TITLE = L"SLAGA";
 	int xPos = 0.5, yPos = 0.5, nWidth = 400, nHeight = 400;
 
-	winManager.NecoRegisterClass(WIN_CLASS, WinProcedure);
-	HWND hWnd = winManager.NecoCreateWindow(WIN_TITLE, xPos, yPos, nWidth, nHeight);
+	winManager.RegClass(WIN_CLASS, WinProcedure);
+	HWND hWnd = winManager.CreateWin(WIN_TITLE, xPos, yPos, nWidth, nHeight);
 	ShowWindow(hWnd, SW_SHOW);
 
 	MSG msg;

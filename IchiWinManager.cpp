@@ -1,11 +1,11 @@
-#include "headers/NecoWinManager.h"
+#include "headers/IchiWinManager.h"
 
-NecoWinManager::NecoWinManager(HINSTANCE hInstance)
+IchiWinManager::IchiWinManager(HINSTANCE hInstance)
 {
 	this->hInstance = hInstance;
 }
 
-void NecoWinManager::NecoRegisterClass(PCWSTR pClassName, WinProc winProc)
+void IchiWinManager::RegClass(PCWSTR pClassName, WinProc winProc)
 {
 
 	try
@@ -36,10 +36,10 @@ void NecoWinManager::NecoRegisterClass(PCWSTR pClassName, WinProc winProc)
 	}
 }
 
-HWND NecoWinManager::NecoCreateWindow(PCWSTR pWinName, int xPos, int yPos, int nWidth, int nHeight) const
+HWND IchiWinManager::CreateWin(PCWSTR pWinName, int xPos, int yPos, int nWidth, int nHeight) const
 {
 
-	HWND hWnd = CreateWindowW(pClassName, pWinName, WS_SYSMENU, xPos, yPos, nWidth, nHeight, nullptr, nullptr, hInstance, nullptr);
+	HWND hWnd = CreateWindow(pClassName, pWinName, WS_SYSMENU, xPos, yPos, nWidth, nHeight, nullptr, nullptr, hInstance, nullptr);
 
 	if (hWnd == nullptr)
 	{
