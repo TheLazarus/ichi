@@ -1,4 +1,4 @@
-#include "headers/IchiProcManager.h"
+#include "IchiProcManager.h"
 
 IchiProcManager::IchiProcManager(HWND hWnd)
 {
@@ -22,7 +22,7 @@ void IchiProcManager::GetProcIdn()
 
     catch (PCWSTR msg)
     {
-        MessageBox(hWnd, msg, L"Neco", MB_OKCANCEL);
+        MessageBox(hWnd, msg, L"Ichi", MB_OKCANCEL);
         exit(-1);
     }
 }

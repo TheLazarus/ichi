@@ -1,4 +1,4 @@
-#include "headers/IchiWinManager.h"
+#include "IchiWinManager.h"
 
 IchiWinManager::IchiWinManager(HINSTANCE hInstance)
 {
