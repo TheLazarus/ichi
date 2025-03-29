@@ -54,7 +54,7 @@ void IchiProcManager::PrintProcs()
     if (!noOfProcIdn)
         return;
 
-    for (int i = 0; i < noOfProcIdn; i++)
+    for (DWORD i = 0; i < noOfProcIdn; i++)
     {
         DWORD pid = procs[i];
         if (pid != 0)

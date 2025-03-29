@@ -1,7 +1,7 @@
 #ifndef ICHI_WIN_MANAGER
 #define ICHI_WIN_MANAGER
 
-#include <windows.h>
+#include "IchiWin.h"
 
 typedef LRESULT(WINAPI *WinProc)(HWND hWnd, UINT uMsg, WPARAM wP, LPARAM lP);
 
