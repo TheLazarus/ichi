@@ -5,7 +5,7 @@ IchiProcManager::IchiProcManager(HWND hWnd)
     this->hWnd = hWnd;
 }
 
-void IchiProcManager::GetProcIdn()
+void IchiProcManager::SetProcIdentifiers()
 {
 
     try
@@ -27,7 +27,29 @@ void IchiProcManager::GetProcIdn()
     }
 }
 
-void IchiProcManager::PrintProcNames()
+void IchiProcManager::PrintProcName(DWORD pid)
+{
+
+    HANDLE hProcess = OpenProcess(PROCESS_QUERY_INFORMATION, FALSE, pid);
+
+    if (hProcess != nullptr)
+    {
+        HINSTANCE procModule{};
+        DWORD moduleSizeInBytes{};
+
+        wchar_t procModuleName[1000]{};
+
+        if (EnumProcessModulesEx(hProcess, &procModule, sizeof(procModule), &moduleSizeInBytes, LIST_MODULES_ALL))
+        {
+            GetModuleBaseName(hProcess, procModule, procModuleName, sizeof(procModuleName) / sizeof(wchar_t));
+        }
+
+        MessageBox(hWnd, procModuleName, L"Ichi", MB_OKCANCEL);
+        CloseHandle(hProcess);
+    }
+}
+
+void IchiProcManager::PrintProcs()
 {
     if (!noOfProcIdn)
         return;
@@ -37,6 +59,8 @@ void IchiProcManager::PrintProcNames()
         DWORD pid = procs[i];
         if (pid != 0)
         {
+
+            PrintProcName(pid);
         }
     }
 }

@@ -8,12 +8,14 @@ class IchiProcManager
 {
 public:
     IchiProcManager(HWND hWnd);
-    void GetProcIdn();
-    void PrintProcNames();
+    void SetProcIdentifiers();
+    void PrintProcs();
 
 private:
     DWORD procs[1024]{}, procDataInBytes{}, noOfProcIdn{};
     HWND hWnd;
+
+    void PrintProcName(DWORD pid);
 };
 
 #endif

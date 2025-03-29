@@ -26,7 +26,13 @@ int WINAPI wWinMain(HINSTANCE hInstance, [[maybe_unused]] HINSTANCE hPrevInstanc
 
 	winManager.RegClass(WIN_CLASS, WinProcedure);
 	HWND hWnd = winManager.CreateWin(WIN_TITLE, xPos, yPos, nWidth, nHeight);
+
+	IchiProcManager procManager(hWnd);
+
 	ShowWindow(hWnd, SW_SHOW);
+
+	procManager.SetProcIdentifiers();
+	procManager.PrintProcs();
 
 	MSG msg;
 	while (GetMessage(&msg, hWnd, 0, 0) > 0)
