@@ -30,7 +30,7 @@ void IchiProcManager::SetProcIdentifiers()
 void IchiProcManager::PrintProcName(DWORD pid)
 {
 
-    HANDLE hProcess = OpenProcess(PROCESS_QUERY_INFORMATION, FALSE, pid);
+    HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, pid);
 
     if (hProcess != nullptr)
     {
@@ -44,7 +44,13 @@ void IchiProcManager::PrintProcName(DWORD pid)
             GetModuleBaseName(hProcess, procModule, procModuleName, sizeof(procModuleName) / sizeof(wchar_t));
         }
 
-        MessageBox(hWnd, procModuleName, L"Ichi", MB_OKCANCEL);
+        if (MessageBox(hWnd, procModuleName, L"Ichi", MB_OKCANCEL) == IDCANCEL)
+        {
+            MSG msg{};
+            msg.hwnd = hWnd;
+            msg.message = WM_CLOSE;
+            DispatchMessage(&msg);
+        }
         CloseHandle(hProcess);
     }
 }
