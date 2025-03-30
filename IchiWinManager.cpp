@@ -1,6 +1,5 @@
 #include "IchiWinManager.h"
 
-
 IchiWinManager::IchiWinManager(HINSTANCE hInstance)
 {
 	this->hInstance = hInstance;

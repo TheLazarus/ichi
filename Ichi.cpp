@@ -2,6 +2,7 @@
 
 int WINAPI wWinMain(HINSTANCE hInstance, [[maybe_unused]] HINSTANCE hPrevInstance, [[maybe_unused]] PWSTR lpCmdLine, [[maybe_unused]] int nCmdShow)
 {
+
 	IchiWinManager winManager(hInstance);
 
 	PCWSTR WIN_CLASS = L"ICHI_MAIN", WIN_TITLE = L"Ichi";
