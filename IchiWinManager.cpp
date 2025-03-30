@@ -1,5 +1,6 @@
 #include "IchiWinManager.h"
 
+
 IchiWinManager::IchiWinManager(HINSTANCE hInstance)
 {
 	this->hInstance = hInstance;
@@ -39,7 +40,7 @@ void IchiWinManager::RegClass(PCWSTR pClassName, WinProc winProc)
 HWND IchiWinManager::CreateWin(PCWSTR pWinName, int xPos, int yPos, int nWidth, int nHeight) const
 {
 
-	HWND hWnd = CreateWindow(pClassName, pWinName, WS_SYSMENU, xPos, yPos, nWidth, nHeight, nullptr, nullptr, hInstance, nullptr);
+	HWND hWnd = CreateWindow(pClassName, pWinName, WS_OVERLAPPEDWINDOW, xPos, yPos, nWidth, nHeight, nullptr, nullptr, hInstance, nullptr);
 
 	if (hWnd == nullptr)
 	{

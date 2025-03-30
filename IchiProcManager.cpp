@@ -7,7 +7,6 @@ IchiProcManager::IchiProcManager(HWND hWnd)
 
 void IchiProcManager::SetProcIdentifiers()
 {
-
     try
     {
 
@@ -44,7 +43,7 @@ void IchiProcManager::PrintProcName(DWORD pid)
             GetModuleBaseName(hProcess, procModule, procModuleName, sizeof(procModuleName) / sizeof(wchar_t));
         }
 
-        if (MessageBox(hWnd, procModuleName, L"Ichi", MB_OKCANCEL) == IDCANCEL)
+        if (MessageBox(hWnd, procModuleName, L"Ichi", MB_OKCANCEL) == IDOK)
         {
             MSG msg{};
             msg.hwnd = hWnd;
@@ -60,13 +59,13 @@ void IchiProcManager::PrintProcs()
     if (!noOfProcIdn)
         return;
 
-    for (DWORD i = 0; i < noOfProcIdn; i++)
-    {
-        DWORD pid = procs[i];
-        if (pid != 0)
-        {
+    // for (DWORD i = 0; i < noOfProcIdn; i++)
+    // {
+    //     DWORD pid = procs[i];
+    //     if (pid != 0)
+    //     {
 
-            PrintProcName(pid);
-        }
-    }
+    //         PrintProcName(pid);
+    //     }
+    // }
 }

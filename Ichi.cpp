@@ -5,7 +5,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, [[maybe_unused]] HINSTANCE hPrevInstanc
 	IchiWinManager winManager(hInstance);
 
 	PCWSTR WIN_CLASS = L"ICHI_MAIN", WIN_TITLE = L"Ichi";
-	int xPos = 200, yPos = 200, nWidth = 600, nHeight = 400;
+	const BOOL xPos = 200, yPos = 200, nWidth = 600, nHeight = 400;
 
 	winManager.RegClass(WIN_CLASS, WinProcedure);
 	HWND hWnd = winManager.CreateWin(WIN_TITLE, xPos, yPos, nWidth, nHeight);
