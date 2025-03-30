@@ -10,6 +10,15 @@ LRESULT WINAPI WinProcedure(HWND hWnd, UINT uMsg, WPARAM wP, LPARAM lP)
             DestroyWindow(hWnd);
         }
         break;
+    case WM_PAINT:
+    {
+        PAINTSTRUCT ps{};
+        HDC hdc = BeginPaint(hWnd, &ps);
+
+        FillRect(hdc, &ps.rcPaint, (HBRUSH)(COLOR_WINDOW + 1));
+        EndPaint(hWnd, &ps);
+        break;
+    }
 
     default:
         return DefWindowProc(hWnd, uMsg, wP, lP);
