@@ -1,6 +1,6 @@
 CC = g++
 CFLAGS = -Wall -Wextra -municode
-LIBS = -lole32 -lcomctl32 -loleaut32 -luuid
+LIBS = -lgdi32
 CPP_FILES = Ichi.cpp IchiProcManager.cpp IchiWinManager.cpp IchiWinProcedure.cpp
 OBJ_FILES = Ichi.o IchiProcManager.o IchiWinManager.o IchiWinProcedure.o
 
